@@ -1,1 +1,3 @@
-# margit_js_sandbox
+# Materials from JS classes with Margit
+
+Whatever I did here, Margit forced me
