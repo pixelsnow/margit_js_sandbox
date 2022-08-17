@@ -1,6 +1,6 @@
-const a = Number.parseFloat(prompt("Enter first number"));
-const b = Number.parseFloat(prompt("Enter second number"));
-const c = Number.parseFloat(prompt("Enter third number"));
+const a = Number(prompt("Enter first number"));
+const b = Number(prompt("Enter second number"));
+const c = Number(prompt("Enter third number"));
 let output;
 function calc(a, b, c) {
   if (a >= 0 || b >= 0 || c >= 0) {
