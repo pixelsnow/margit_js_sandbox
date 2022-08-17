@@ -1,0 +1,17 @@
+body p {
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+#user_input {
+  color: blueviolet;
+  font-size: 40px;
+}
+
+#user_result {
+  color: rgb(79, 182, 255);
+  font-size: 40px;
+}
