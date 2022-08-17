@@ -7,4 +7,8 @@ else if (age < 55) output = "You are in backup reserve";
 else output = "too aged";
 
 console.log(output);
-document.body.innerHTML = document.body.innerHTML.replace(": ", ": " + output);
+document.getElementById("user_input").innerHTML = output;
+//document.body.innerHTML = document.body.innerHTML.replace(": ", ": " + output);
+/* document.getElementById("user_input").innerHTML = document
+  .getElementById("user_input")
+  .innerHTML.replace("", output); */

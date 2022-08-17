@@ -1,6 +1,5 @@
-let salary, hours;
-salary = prompt("Enter your hourly salary");
-hours = prompt("Enter how many hours you have worked");
+const salary = Number(prompt("Enter your hourly salary"));
+const hours = Number(prompt("Enter how many hours you have worked"));
 let output;
 function calc(salary, hours) {
   if (salary < 0 || hours < 0) {
