@@ -2,17 +2,16 @@
 
 let ending;
 let sum = 0;
-let count = 0;
-for (let i = 1; i <= 25; i++) {
-  if (i === 1 || i === 21) // Making the input pretty
-    ending = 'st';
-  else if (i === 2 || i === 22)
-    ending = 'nd';
-  else if (i === 3 || i === 23)
-    ending = 'rd';
-  else ending = 'th';
+let count;
+for (count = 0; count < 25; ++count) {
+  if (count === 1 || count === 21)
+    // Making the input pretty
+    ending = "st";
+  else if (count === 2 || count === 22) ending = "nd";
+  else if (count === 3 || count === 23) ending = "rd";
+  else ending = "th";
 
-  sum += +prompt(`Enter the ${i}${ending} number`);
-  count++;
+  sum += +prompt(`Enter the ${count + 1}${ending} number`);
 }
+console.log(`sum = ${sum}, count = ${count}`);
 alert(`average of your numbers is ${sum / count}`);
