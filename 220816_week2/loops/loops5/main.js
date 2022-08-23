@@ -6,6 +6,7 @@ let sum = 0;
 let count = 0;
 do {
   num = +prompt("Enter a number");
+  if (!num) break;
   sum += num;
   count++;
 } while (num);
