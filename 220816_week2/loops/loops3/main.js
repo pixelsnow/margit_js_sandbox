@@ -4,6 +4,7 @@
 let distance, time;
 do {
   distance = +prompt("Enter distance in km");
+  if (!distance) break;
   time = +prompt("Enter time in hours");
   alert(`Average speed is ${distance / time} km/h`);
 } while (distance);
