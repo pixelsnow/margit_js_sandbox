@@ -21,30 +21,23 @@ function displayPetrol() {
 }
 
 tempConverter = (inputId, input) => {
+  const idF = document.querySelector("#fahrenheit");
+  const idC = document.querySelector("#celsius");
+  const idK = document.querySelector("#kelvin");
   switch (inputId) {
     case "celsius": {
-      document.querySelector("#fahrenheit").value = (+input * 1.8 + 32).toFixed(
-        2
-      );
-      document.querySelector("#kelvin").value = (+input + 273.15).toFixed(2);
+      idF.value = (+input * 1.8 + 32).toFixed(2);
+      idK.value = (+input + 273.15).toFixed(2);
       break;
     }
     case "fahrenheit": {
-      document.querySelector("#celsius").value = ((+input - 32) / 1.8).toFixed(
-        2
-      );
-      document.querySelector("#kelvin").value = (
-        (+input - 32) / 1.8 +
-        273.15
-      ).toFixed(2);
+      idC.value = ((+input - 32) / 1.8).toFixed(2);
+      idK.value = ((+input - 32) / 1.8 + 273.15).toFixed(2);
       break;
     }
     case "kelvin": {
-      document.querySelector("#fahrenheit").value = (
-        (+input - 273.15) * 1.8 +
-        32
-      ).toFixed(2);
-      document.querySelector("#celsius").value = (+input - 273.15).toFixed(2);
+      idF.value = ((+input - 273.15) * 1.8 + 32).toFixed(2);
+      idC.value = (+input - 273.15).toFixed(2);
       break;
     }
   }
