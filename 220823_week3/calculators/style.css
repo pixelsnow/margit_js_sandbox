@@ -7,21 +7,26 @@ body {
 }
 
 h1 {
-  color: rgb(236, 128, 109);
+  color: rgb(77, 155, 137);
 }
 
-.input {
-  margin: 10px 0;
+input {
+  margin: 10px;
+  font-family: inherit;
+}
+label {
+  color: rgb(77, 155, 137);
 }
 
 button {
-  background-color: rgb(49, 121, 104);
+  background-color: rgb(236, 128, 109);
   color: white;
   border-style: none;
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 20px;
-  margin: 10px 0;
+  margin: 15px 0;
+  font-family: inherit;
 }
 
 #user_output {

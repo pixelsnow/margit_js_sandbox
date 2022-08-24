@@ -1,13 +1,21 @@
 function displayPetrol() {
-  let price = document.querySelector("#price").value;
-  let money = document.querySelector("#money").value;
-  if (money / price > 10)
-    document.querySelector("#user_output").textContent = `You have ${
-      money / price
-    } liters of petrol. Good, you can escape now!`;
+  const price = +document.querySelector("#price").value;
+  const money = +document.querySelector("#money").value;
+  const answer = document.querySelector("#user_output");
+  money / price > 10
+    ? (answer.textContent = `You have ${(money / price).toFixed(
+        1
+      )} liters of petrol. Good, you can escape now!`)
+    : (answer.textContent = `You have ${(money / price).toFixed(
+        1
+      )} liters of petrol. Oops, you have to stay here...`);
+  /* if (money / price > 10)
+    answer.textContent = `You have ${(money / price).toFixed(
+      1
+    )} liters of petrol. Good, you can escape now!`;
   else
-    document.querySelector("#user_output").textContent = `You have ${
-      money / price
-    } liters of petrol. Oops, you have to stay here...`;
+    answer.textContent = `You have ${(money / price).toFixed(
+      1
+    )} liters of petrol. Oops, you have to stay here...`; */
   console.log(`price is ${price}, money is ${money}`);
 }
