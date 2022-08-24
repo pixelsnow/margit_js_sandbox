@@ -1,4 +1,28 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  padding: 10px 20%;
+}
+
+h1 {
+  color: rgb(236, 128, 109);
+}
+
+.input {
+  margin: 10px 0;
+}
+
+button {
+  background-color: rgb(49, 121, 104);
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+#user_output {
 }
