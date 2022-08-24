@@ -22,6 +22,38 @@
     </div>
     <button onclick="displayPetrol()">Calculate</button>
     <p><span id="user_output"></span></p>
+
+    <h1>Temperature converter</h1>
+    <div class="input">
+      <label for="celsius">Celsius</label>
+      <input
+        type="number"
+        id="celsius"
+        oninput="celsiusConverter(this.value)"
+        onchange="celsiusConverter(this.value)"
+      />
+    </div>
+    <div class="input">
+      <label for="fahrenheit">Fahrenheit</label>
+      <input
+        type="number"
+        id="fahrenheit"
+        oninput="fahrenheitConverter(this.value)"
+        onchange="fahrenheitConverter(this.value)"
+      />
+    </div>
+    <div class="input">
+      <label for="kelvin">Kelvin</label>
+      <input
+        type="number"
+        id="kelvin"
+        oninput="kelvinConverter(this.value)"
+        onchange="kelvinConverter(this.value)"
+      />
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>
+<!-- onchange="kelvinConverter(this.value)"
+onchange="fahrenheitConverter(this.value)" -->
