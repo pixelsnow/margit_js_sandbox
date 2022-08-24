@@ -29,8 +29,8 @@
       <input
         type="number"
         id="celsius"
-        oninput="celsiusConverter(this.value)"
-        onchange="celsiusConverter(this.value)"
+        oninput="tempConverter(this.id, this.value)"
+        onchange="tempConverter(this.id, this.value)"
       />
     </div>
     <div class="input">
@@ -38,8 +38,8 @@
       <input
         type="number"
         id="fahrenheit"
-        oninput="fahrenheitConverter(this.value)"
-        onchange="fahrenheitConverter(this.value)"
+        oninput="tempConverter(this.id, this.value)"
+        onchange="tempConverter(this.id, this.value)"
       />
     </div>
     <div class="input">
@@ -47,8 +47,8 @@
       <input
         type="number"
         id="kelvin"
-        oninput="kelvinConverter(this.value)"
-        onchange="kelvinConverter(this.value)"
+        oninput="tempConverter(this.id, this.value)"
+        onchange="tempConverter(this.id, this.value)"
       />
     </div>
 

@@ -20,23 +20,32 @@ function displayPetrol() {
   console.log(`price is ${price}, money is ${money}`);
 }
 
-celsiusConverter = (input) => {
-  document.querySelector("#fahrenheit").value = (+input * 1.8 + 32).toFixed(2);
-  document.querySelector("#kelvin").value = (+input + 273.15).toFixed(2);
-};
-
-fahrenheitConverter = (input) => {
-  document.querySelector("#celsius").value = ((+input - 32) / 1.8).toFixed(2);
-  document.querySelector("#kelvin").value = (
-    (+input - 32) / 1.8 +
-    273.15
-  ).toFixed(2);
-};
-
-kelvinConverter = (input) => {
-  document.querySelector("#fahrenheit").value = (
-    (+input - 273.15) * 1.8 +
-    32
-  ).toFixed(2);
-  document.querySelector("#celsius").value = (+input - 273.15).toFixed(2);
+tempConverter = (inputId, input) => {
+  switch (inputId) {
+    case "celsius": {
+      document.querySelector("#fahrenheit").value = (+input * 1.8 + 32).toFixed(
+        2
+      );
+      document.querySelector("#kelvin").value = (+input + 273.15).toFixed(2);
+      break;
+    }
+    case "fahrenheit": {
+      document.querySelector("#celsius").value = ((+input - 32) / 1.8).toFixed(
+        2
+      );
+      document.querySelector("#kelvin").value = (
+        (+input - 32) / 1.8 +
+        273.15
+      ).toFixed(2);
+      break;
+    }
+    case "kelvin": {
+      document.querySelector("#fahrenheit").value = (
+        (+input - 273.15) * 1.8 +
+        32
+      ).toFixed(2);
+      document.querySelector("#celsius").value = (+input - 273.15).toFixed(2);
+      break;
+    }
+  }
 };
