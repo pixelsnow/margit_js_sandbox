@@ -1,0 +1,11 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(72, 72, 72);
+  padding: 10px 20%;
+}
+
+h1 {
+  color: rgb(77, 155, 137);
+}
