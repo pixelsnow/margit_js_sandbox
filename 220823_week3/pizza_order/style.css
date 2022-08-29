@@ -8,4 +8,14 @@ body {
 
 h1 {
   color: rgb(77, 155, 137);
+  text-align: center;
+}
+
+fieldset {
+  margin: 20px;
+}
+
+legend {
+  background-color: black;
+  color: white;
 }
