@@ -1,21 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+}
+
+.containter {
+  display: flex;
+}
+
+.hero_image {
+  width: 25vw;
+  background: url("https://unsplash.com/photos/NzHRSLhc6Cs") no-repeat fixed
+    left center/cover;
+}
+
+.content {
+  width: 50vw;
+}
+
+#order {
+  width: 20vw;
+}
+
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  font-size: 20px;
   color: rgb(72, 72, 72);
   padding: 10px 20%;
 }
 
 h1 {
-  color: rgb(77, 155, 137);
+  color: rgb(241, 158, 42);
+  font-family: "Bebas Neue", cursive;
+  font-size: 48px;
   text-align: center;
 }
 
 fieldset {
   margin: 20px;
+  padding: 15px;
 }
 
 legend {
   background-color: black;
   color: white;
+  padding: 2px 8px;
+}
+
+#price_circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 40px;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+#price_circle_text {
+  position: relative;
 }

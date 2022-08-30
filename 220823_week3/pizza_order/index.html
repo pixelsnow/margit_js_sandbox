@@ -6,110 +6,159 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Pizza time!</h1>
-    <form>
-      <fieldset>
-        <legend>Pick your size</legend>
-        <div>
-          <input type="radio" id="2" name="size" value="2" />
-          <label for="size">For 2</label>
+    <div id="price_circle"><span id="price_circle_text"></span></div>
+    <div class="container">
+      <div class="hero_image"></div>
+      <div class="content">
+        <h1>Pizza time!</h1>
+        <form>
+          <fieldset>
+            <legend>Your name, please</legend>
+            <input type="text" id="name" placeholder="Name" />
+          </fieldset>
+          <fieldset>
+            <legend>Pick your size</legend>
+            <div>
+              <input type="radio" id="2" name="size" value="2" />
+              <label for="size">For 2, €7,50</label>
+            </div>
+            <div>
+              <input type="radio" id="4" name="size" value="4" checked />
+              <label for="size">For 4, €10,50</label>
+            </div>
+            <div>
+              <input type="radio" id="6" name="size" value="6" />
+              <label for="size">For 6, €12,50</label>
+            </div>
+            <div>
+              <input type="radio" id="8" name="size" value="8" />
+              <label for="size">For 8, €15,50</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Pick toppings</legend>
+            <p>First 4 free, after that €0.50 each</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Cheese"
+                    />Cheese
+                  </td>
+                  <td>
+                    <input type="checkbox" name="topping" value="Ham" />Ham
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Chilies"
+                    />Chilies
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Paprika"
+                    />Paprika
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Mushrooms"
+                    />Mushrooms
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Olives"
+                    />Olives
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Shrimp"
+                    />Shrimp
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Mussels"
+                    />Mussels
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Pickles"
+                    />Pickles
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Chicken"
+                    />Chicken
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Blue cheese"
+                    />Blue cheese
+                  </td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      name="topping"
+                      value="Pineapple"
+                    />Pineapple
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <fieldset>
+            <legend>Delivery?</legend>
+            <div>
+              <select name="delivery" id="delivery">
+                <option disabled selected value>
+                  -- select your delivery method --
+                </option>
+                <option value="delivery">Delivered to the doorstep, 5€</option>
+                <option value="eatin">Eat in</option>
+                <option value="pickup">Pick up</option>
+              </select>
+            </div>
+          </fieldset>
+        </form>
+        <div id="order">
+          <p id="output_name"></p>
+          <p id="output_size"></p>
+          <p id="output_toppings"></p>
+          <p id="output_delivery"></p>
+          <p id="output_price"></p>
         </div>
-        <div>
-          <input type="radio" id="4" name="size" value="4" />
-          <label for="size">For 4</label>
-        </div>
-        <div>
-          <input type="radio" id="6" name="size" value="6" />
-          <label for="size">For 6</label>
-        </div>
-        <div>
-          <input type="radio" id="8" name="size" value="8" />
-          <label for="size">For 8</label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Pick toppings</legend>
-        <p>First 4 free, after that €0.50 each</p>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" name="topping" value="Cheese" />Cheese
-              </td>
-              <td><input type="checkbox" name="topping" value="Ham" />Ham</td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="topping" value="Chilies" />Chilies
-              </td>
-              <td>
-                <input type="checkbox" name="topping" value="Paprika" />Paprika
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  type="checkbox"
-                  name="topping"
-                  value="Mushrooms"
-                />Mushrooms
-              </td>
-              <td>
-                <input type="checkbox" name="topping" value="Olives" />Olives
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="topping" value="Shrimp" />Shrimp
-              </td>
-              <td>
-                <input type="checkbox" name="topping" value="Mussels" />Mussels
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="topping" value="Pickles" />Pickles
-              </td>
-              <td>
-                <input type="checkbox" name="topping" value="Chicken" />Chicken
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" name="topping" value="Blue cheese" />Blue
-                cheese
-              </td>
-              <td>
-                <input
-                  type="checkbox"
-                  name="topping"
-                  value="Pineapple"
-                />Pineapple
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </fieldset>
-      <fieldset>
-        <legend>Delivery?</legend>
-        <div>
-          <select name="delivery" id="delivery">
-            <option value="delivery">Delivered to the doorstep, 5€</option>
-            <option value="eatin">Eat in</option>
-            <option value="pickup">Pick up</option>
-          </select>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Your name, please</legend>
-        <input type="text" id="name" />
-      </fieldset>
-    </form>
-    <p id="output_name"></p>
-    <p id="output_size"></p>
-    <p id="output_toppings"></p>
-    <p id="output_delivery"></p>
-    <p id="output_price"></p>
+      </div>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

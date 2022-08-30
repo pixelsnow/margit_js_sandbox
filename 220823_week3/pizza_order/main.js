@@ -1,9 +1,9 @@
-let cost = 0;
-let sizeCost = 7.5;
-let deliveryCost = 5;
+let calcCost = 0;
+
+let sizeCost = 10.5;
+let deliveryCost = 0;
 let numToppings = 0;
-let username = "";
-let toppingStr = "";
+let userName = "";
 
 const recalcCost = () => {
   cost = sizeCost + deliveryCost;
@@ -11,12 +11,18 @@ const recalcCost = () => {
     cost += (numToppings - 4) * 0.5;
   }
   document.querySelector("#output_price").textContent = `To pay: €${cost}`;
+  document.querySelector("#price_circle_text").textContent = `€${cost}`;
+};
+
+/* SIZE */
+
+const updateSize = (i) => {
+  document.querySelector("#output_size").textContent = `Size: for ${
+    2 * (i + 1)
+  }`;
 };
 
 const sizes = document.querySelectorAll('input[name="size"]');
-const toppings = document.querySelectorAll('input[name="topping"]');
-const deliveryIn = document.querySelector("#delivery");
-const nameIn = document.querySelector("#name");
 
 for (let i = 0; i < sizes.length; i++) {
   sizes[i].addEventListener("change", () => {
@@ -39,20 +45,24 @@ for (let i = 0; i < sizes.length; i++) {
       }
     }
     recalcCost();
-    document.querySelector(
-      "#output_size"
-    ).textContent = `Size: ${sizes[i].value}`;
+    updateSize(i);
   });
 }
 
+/* TOPPINGS */
+
 const updateToppings = () => {
-  toppingStr = "";
+  let toppingStr = "";
   toppings.forEach((topping) => {
-    if (topping.checked) toppingStr += topping.value + " ";
+    if (topping.checked) toppingStr += topping.value + ", ";
   });
+  if (toppingStr.length > 2) toppingStr = toppingStr.slice(0, length - 2) + ".";
+  else toppingStr = "none.";
   document.querySelector("#output_toppings").textContent =
     "Your toppings: " + toppingStr;
 };
+
+const toppings = document.querySelectorAll('input[name="topping"]');
 
 for (let i = 0; i < toppings.length; i++) {
   toppings[i].addEventListener("change", () => {
@@ -64,21 +74,33 @@ for (let i = 0; i < toppings.length; i++) {
   });
 }
 
+/* DELIVERY */
+
+const updateDelivery = () => {
+  document.querySelector(
+    "#output_delivery"
+  ).textContent = `Your delivery method: ${deliveryIn.selectedOptions[0].label}`;
+};
+
+const deliveryIn = document.querySelector("#delivery");
+
 deliveryIn.addEventListener("change", (event) => {
   console.log(event.target.value);
   if (event.target.value === "delivery") deliveryCost = 5;
   else deliveryCost = 0;
   recalcCost();
-  document.querySelector(
-    "#output_delivery"
-  ).textContent = `Your delivery method: ${event.target.value}`;
+  updateDelivery();
 });
 
-/* deliveryIn.addEventListener("click", (event) => {
-  console.log(event.target.value);
-}); */
+/* NAME */
+
+const updateName = () => {
+  document.querySelector("#output_name").textContent = `Your name: ${username}`;
+};
+
+const nameIn = document.querySelector("#name");
 
 nameIn.addEventListener("change", () => {
   username = nameIn.value;
-  document.querySelector("#output_name").textContent = `Your name: ${username}`;
+  updateName();
 });

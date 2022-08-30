@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pizza order</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero-image"></div>
+      <div class="content">
+        <h1>Ordering pizza from us is simple</h1>
+        <form>
+          <h2>What should we call you?</h2>
+          <input type="text" placeholder="Enter you name please" id="name" />
+
+          <h2>First, choose your pizza size:</h2>
+          <p>(price depends on the size of your pizza)</p>
+
+          <div>
+            <input id="size1" type="radio" value="2" name="size" checked />
+            <label for="size1">for two 7,50€</label>
+          </div>
+          <div>
+            <input id="size2" type="radio" value="4" name="size" />
+            <label for="size2">for four 10,50€</label>
+          </div>
+          <div>
+            <input id="size3" type="radio" value="6" name="size" />
+            <label for="size3">for six 12,50€</label>
+          </div>
+          <div>
+            <input id="size4" type="radio" value="8" name="size" />
+            <label for="size4">for eight 15,50€</label>
+          </div>
+
+          <h2>Then add toppings:</h2>
+          <p>(first four is free, after that +50 cents each topping)</p>
+          <div>
+            <input type="checkbox" id="topping1" value="pepperoni" />
+            <label for="topping1">pepperoni</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping2" value="sausage" />
+            <label for="topping2">sausage</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping3" value="mushrooms" />
+            <label for="topping3">mushrooms</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping4" value="bacon" />
+            <label for="topping4">bacon</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping5" value="onions" />
+            <label for="topping5">onions</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping6" value="extra cheese" />
+            <label for="topping6">extra cheese</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping7" value="peppers" />
+            <label for="topping7">peppers</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping8" value="chicken" />
+            <label for="topping8">chicken</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping9" value="beef" />
+            <label for="topping9">beef</label>
+          </div>
+          <div>
+            <input type="checkbox" id="topping10" value="ham" />
+            <label for="topping10">ham</label>
+          </div>
+
+          <h2>At last, select where you want to eat?</h2>
+
+          <select name="delivery" id="delivery">
+            <option value="home">Delivery to home, +5€</option>
+            <option value="eat in">Eat in</option>
+            <option value="pickup">Pickup food</option>
+          </select>
+          <button type="submit">Order pizza</button>
+        </form>
+      </div>
+      <p id="order"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

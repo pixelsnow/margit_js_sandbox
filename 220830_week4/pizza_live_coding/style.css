@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  margin: 0 0 1rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0;
+}
+
+p {
+  color: grey;
+  margin: 0 0 1rem;
+}
+
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+}
+
+button {
+  color: white;
+  background-color: rgb(255, 85, 38);
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 1.5rem;
+}
+
+button:hover {
+  color: white;
+  background-color: rgb(224, 61, 16);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+}
+
+.hero-image {
+  width: 50vw;
+  background: url("https://source.unsplash.com/UxRhrU8fPHQ") no-repeat fixed
+    bottom center/cover;
+}
+
+.content {
+  width: 50vw;
+  padding: 2rem;
+}
+
+#order {
+  width: 20vw;
+}
