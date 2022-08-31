@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Insurance quote</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero_image"></div>
+      <div class="content">
+        <h1>Insurance calculator</h1>
+        <form>
+          <h2>Basic info</h2>
+          <div>
+            <label for="name">Enter your name</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="age">Enter your age</label>
+            <input type="number" id="age" />
+          </div>
+          <h2>Pre-existing conditions</h2>
+          <div>
+            <input type="checkbox" id="health1" class="health" />
+            <label for="health1">Hypertension</label>
+          </div>
+          <div>
+            <input type="checkbox" id="health2" class="health" />
+            <label for="health1">Blood sugar issues</label>
+          </div>
+          <div>
+            <input type="checkbox" id="health3" class="health" />
+            <label for="health1">Overweight</label>
+          </div>
+          <h2>Habits</h2>
+          <div>
+            <input type="checkbox" id="bad1" class="habits" value="bad" />
+            <label for="bad1">Smoking</label>
+          </div>
+          <div>
+            <input type="checkbox" id="bad2" class="habits" value="bad" />
+            <label for="bad2">Alcohol</label>
+          </div>
+          <div>
+            <input type="checkbox" id="good1" class="habits" value="good" />
+            <label for="good1">Daily exercise</label>
+          </div>
+          <div>
+            <input type="checkbox" id="bad3" class="habits" value="bad" />
+            <label for="bad3">Drugs</label>
+          </div>
+          <button type="submit">Calculate</button>
+        </form>
+        <p id="result"></p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

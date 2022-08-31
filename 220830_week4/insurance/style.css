@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant&family=Libre+Baskerville:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 15px;
+}
+
+input,
+button {
+  font-family: inherit;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "Libre Baskerville", serif;
+}
+
+h1 {
+  margin: 1.5rem 0;
+}
+h2 {
+  margin: 1.5rem 0 0.5rem;
+}
+.container {
+  display: flex;
+}
+
+.hero_image {
+  width: 35vw;
+  background: url("https://source.unsplash.com/75xPHEQBmvA") no-repeat fixed top
+    center/cover;
+}
+
+.content {
+  width: 65vw;
+  padding: 2rem;
+  background-color: rgb(35, 34, 40);
+  color: white;
+}
+
+#name,
+#age {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: inherit;
+}
+
+button {
+  background-color: white;
+  color: rgb(35, 34, 40);
+  border: none;
+  border-radius: 3px;
+  padding: 1rem 1.5rem;
+  font-size: inherit;
+}
+
+button:hover {
+  background-color: rgb(227, 227, 227);
+  cursor: pointer;
+}
