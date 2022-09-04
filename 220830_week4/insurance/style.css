@@ -66,11 +66,16 @@ button {
   color: rgb(35, 34, 40);
   border: none;
   border-radius: 3px;
-  padding: 1rem 1.5rem;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
   font-size: inherit;
 }
 
 button:hover {
   background-color: rgb(227, 227, 227);
   cursor: pointer;
+}
+
+#result {
+  margin: 1rem 0;
 }
