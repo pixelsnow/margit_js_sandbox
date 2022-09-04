@@ -42,7 +42,7 @@ const takeOrder = (e) => {
 
   if (deliveryResult === "home") price += 5;
 
-  order.textContent = `Thank you for the order, ${customerName}! Size: ${sizeResult}. <b>Toppings</b>: ${toppingsResult.join(
+  order.textContent = `Thank you for the order, ${customerName}! Size: ${sizeResult}. Toppings: ${toppingsResult.join(
     ", "
   )}. Delivery: ${deliveryResult}`;
 };

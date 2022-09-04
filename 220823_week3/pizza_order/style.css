@@ -98,6 +98,11 @@ button {
   margin: 1.5rem 0 0 0;
 }
 
+button:hover {
+  background-color: #e4921f;
+  cursor: pointer;
+}
+
 #price_circle {
   position: fixed;
   top: 0;
