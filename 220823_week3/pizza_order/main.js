@@ -56,8 +56,8 @@ const updateToppings = () => {
   toppings.forEach((topping) => {
     if (topping.checked) toppingStr += topping.value + ", ";
   });
-  if (toppingStr.length > 2) toppingStr = toppingStr.slice(0, length - 2) + ".";
-  else toppingStr = "none.";
+  if (toppingStr.length > 2) toppingStr = toppingStr.slice(0, length - 2);
+  else toppingStr = "none";
   document.querySelector("#output_toppings").textContent =
     "Your toppings: " + toppingStr;
 };
@@ -104,3 +104,14 @@ nameIn.addEventListener("change", () => {
   username = nameIn.value;
   updateName();
 });
+
+/* ORDER BUTTON */
+
+const placeOrder = () => {
+  recalcCost();
+  form.reset();
+};
+
+document.querySelector("form").addEventListener("submit", placeOrder);
+
+recalcCost();

@@ -8,7 +8,6 @@
   <body>
     <div id="price_circle"><p id="price_circle_text"></p></div>
     <div class="container">
-      <div class="hero_image"></div>
       <div class="content">
         <h1>Pizza time!</h1>
         <form>
@@ -148,17 +147,19 @@
               </select>
             </div>
           </fieldset>
+          <div id="order">
+            <p id="output_name"></p>
+            <p id="output_size"></p>
+            <p id="output_toppings"></p>
+            <p id="output_delivery"></p>
+            <p id="output_price"></p>
+          </div>
+          <div class="button_container">
+            <button type="submit">Place order</button>
+          </div>
         </form>
-        <div id="order">
-          <p id="output_name"></p>
-          <p id="output_size"></p>
-          <p id="output_toppings"></p>
-          <p id="output_delivery"></p>
-          <p id="output_price"></p>
-        </div>
       </div>
     </div>
-
     <script src="main.js"></script>
   </body>
 </html>

@@ -6,68 +6,114 @@
   box-sizing: border-box;
 }
 
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 html {
   font-family: "Cabin", sans-serif;
   font-size: 16px;
-}
-
-.containter {
-  display: flex;
-}
-
-.hero_image {
-  width: 25vw;
-  background: url("https://unsplash.com/photos/NzHRSLhc6Cs") no-repeat fixed
-    left center/cover;
-}
-
-.content {
-  width: 50vw;
-}
-
-#order {
-  width: 20vw;
+  /* background-image: url(https://previews.123rf.com/images/canatic/canatic1912/canatic191200025/136000188-pizza-background-hand-drawn-slices-of-pizza-black-sketch-on-white-backdrop-seamless-wallpaper-patter.jpg); */
+  background-image: url(https://st.depositphotos.com/1815767/1721/i/950/depositphotos_17216185-stock-photo-seamless-pizza-background.jpg);
+  background-size: 250px;
 }
 
 body {
-  color: rgb(72, 72, 72);
-  padding: 10px 20%;
+  padding: 2rem 0;
+}
+
+.content {
+  max-width: 70vw;
+  padding: 3rem;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+}
+
+#order {
+  border: 5px #f19e2a solid;
+  padding: 1.2rem;
+  border-radius: 8px;
 }
 
 h1 {
-  color: rgb(241, 158, 42);
+  color: #f19e2a;
   font-family: "Bebas Neue", cursive;
   font-size: 48px;
   text-align: center;
 }
 
 fieldset {
-  margin: 20px;
-  padding: 15px;
+  margin: 1.3rem 0;
+  padding: 1.2rem;
+  border: solid;
+  border-radius: 8px;
+}
+
+fieldset input {
+  margin: 0.3rem 0;
+}
+
+fieldset p {
+  margin: 0 0 0.5rem 0;
+}
+
+table input {
+  margin: 0.3rem 0.3rem 0.3rem 1rem;
 }
 
 legend {
   background-color: black;
   color: white;
-  padding: 2px 8px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: black solid;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: black solid;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #f19e2a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem 2rem;
+  margin: 1.5rem 0 0 0;
 }
 
 #price_circle {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  margin: 40px;
-  width: 150px;
-  height: 150px;
-  background-color: rgb(241, 158, 42);
-  border-radius: 75px;
+  margin: 1rem;
+  width: 100px;
+  height: 100px;
+  background-color: #f19e2a;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #price_circle_text {
-  position: absolute;
-  top: 50;
   text-align: center;
   color: white;
-  font-size: 40px;
-  display: flex;
+  font-size: 28px;
 }
