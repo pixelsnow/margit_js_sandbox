@@ -44,6 +44,7 @@ const calcScore = (e) => {
   console.log("habit increase: ", increase);
   console.log("current result: " + res);
 
+  document.querySelector(".result_container").style.borderWidth = "1px";
   document.querySelector("#result").textContent = `${
     username.value
   }, your result is ${res.toFixed(0)}`;
