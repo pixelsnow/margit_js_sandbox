@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Gradient generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Linear gradient generator</h1>
+        <h2>Colours</h2>
+
+        <input type="color" class="color" id="color1" />
+        <input type="color" class="color" id="color2" />
+        <h2>Direction</h2>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label class="custom_radio" for="right_bottom">
+                  <input
+                    type="radio"
+                    name="dir"
+                    id="right_bottom"
+                    value="right bottom"
+                  />
+                  <button>
+                    <span class="material-symbols-outlined checkmark">
+                      south_east
+                    </span>
+                  </button>
+                </label>
+              </td>
+              <td>
+                <label class="custom_radio" for="bottom">
+                  <input
+                    type="radio"
+                    name="dir"
+                    id="bottom"
+                    value="bottom"
+                    checked
+                  />
+                  <span class="material-symbols-outlined checkmark">
+                    arrow_downward
+                  </span>
+                </label>
+              </td>
+              <td>
+                <label class="custom_radio" for="left_bottom">
+                  <input
+                    type="radio"
+                    name="dir"
+                    id="left_bottom"
+                    value="left bottom"
+                  />
+                  <span class="material-symbols-outlined checkmark">
+                    south_west
+                  </span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="custom_radio" for="right">
+                  <input type="radio" name="dir" id="right" value="right" />
+                  <span class="material-symbols-outlined checkmark">
+                    arrow_forward
+                  </span>
+                </label>
+              </td>
+              <td></td>
+              <td>
+                <label class="custom_radio" for="left">
+                  <input type="radio" name="dir" id="left" value="left" />
+                  <span class="material-symbols-outlined checkmark">
+                    arrow_back
+                  </span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label class="custom_radio" for="right_top">
+                  <input
+                    type="radio"
+                    name="dir"
+                    id="right_top"
+                    value="right top"
+                  />
+                  <span class="material-symbols-outlined checkmark">
+                    north_east
+                  </span>
+                </label>
+              </td>
+              <td>
+                <label class="custom_radio" for="top">
+                  <input type="radio" name="dir" id="top" value="top" />
+                  <span class="material-symbols-outlined checkmark">
+                    arrow_upward
+                  </span>
+                </label>
+              </td>
+              <td>
+                <label class="custom_radio" for="left_top">
+                  <input
+                    type="radio"
+                    name="dir"
+                    id="left_top"
+                    value="left top"
+                  />
+                  <span class="material-symbols-outlined checkmark">
+                    north_west
+                  </span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>CSS code</h2>
+        <p id="css"></p>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

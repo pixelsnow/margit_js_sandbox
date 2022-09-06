@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right bottom, #ffffff, #000000) no-repeat fixed
+    center center/cover;
+}
+
+html {
+  font-family: "Questrial", sans-serif;
+}
+
+h2 {
+  margin: 2rem 0 1rem;
+}
+
+.container {
+  text-align: center;
+}
+
+.card {
+  margin: 1rem;
+  padding: 3rem 2rem;
+  background: white;
+  max-width: 300px;
+  border-radius: 4px;
+}
+
+.color {
+  width: 45%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.color::-webkit-color-swatch {
+  border-radius: 4px;
+  border: none;
+}
+.color::-moz-color-swatch {
+  border-radius: 4px;
+  border: none;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  padding: 0.3rem;
+}
+label button {
+  border: none;
+  border-radius: 4px;
+  background-color: #d9d9d9;
+}
+
+.custom_radio {
+  padding: 0.5rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+input:checked {
+  background-color: pink;
+}
+
+.custom_radio .checkmark {
+  background-color: rgba(0, 0, 139, 0.259);
+}
+
+[type="radio"] {
+  opacity: 0.5;
+}
+
+[type="radio"] + label {
+}
