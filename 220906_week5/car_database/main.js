@@ -88,7 +88,7 @@ add_car.addEventListener("submit", (e) => {
           color_input.value
         );
         duplicate = true;
-        input_err.textContent = `A car with licence number ${car.licence} already exists. Info about this car was updated with your data.`;
+        input_err.textContent = `A car with licence number ${car.licence} already exists. Information about the car have been overwritten with new data that you entered.`;
         input_err.style.padding = "1rem";
       }
     });

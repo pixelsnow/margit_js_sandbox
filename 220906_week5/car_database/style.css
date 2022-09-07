@@ -44,9 +44,9 @@ h2 {
 
 .search {
   background-color: white;
-  border-radius: 10px;
   margin: 0 0 1rem 0;
   padding: 2rem;
+  border-radius: 0.5rem;
 }
 
 .search_flexbox {
@@ -72,7 +72,7 @@ h2 {
   padding: 0.5rem 1rem;
 }
 #search_form input::placeholder {
-  color: #7a7a7a;
+  color: #989898;
 }
 
 #search_form button {
@@ -98,7 +98,7 @@ h2 {
   background-color: white;
   display: flex;
   justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 0.5rem;
 }
 
 .insert_data {
@@ -115,12 +115,12 @@ h2 {
   width: 100%;
   background-color: #eeeeee;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   border: none;
 }
 
 #add_car label {
-  color: #7a7a7a;
+  color: #989898;
   line-height: 1.6;
 }
 .buttons {
@@ -131,7 +131,7 @@ h2 {
 .buttons button {
   margin-top: 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   padding: 0.8rem 1.2rem;
   background-color: blueviolet;
   color: white;
@@ -147,11 +147,11 @@ h2 {
 }
 
 .buttons button[type="reset"] {
-  background-color: #7a7a7a;
+  background-color: #989898;
 }
 
 .buttons button:hover[type="reset"] {
-  background-color: #717171;
+  background-color: #8c8c8c;
 }
 
 #input_error {
@@ -165,14 +165,14 @@ h2 {
 
 .database table {
   margin: 2rem 0;
-  background-color: #eeeeee;
+  background-color: white;
   border-collapse: collapse;
   table-layout: auto;
   width: 100%;
 }
 
 .database table tbody {
-  border-bottom: 3px solid #7a7a7a;
+  border-bottom: 3px solid #989898;
 }
 
 .database th,
@@ -183,13 +183,23 @@ td {
 .database th {
   font-weight: inherit;
   text-align: left;
+  /* padding-top: 0.6rem;
+  padding-bottom: 0.6rem; */
+}
+
+.database th:first-child {
+  border-radius: 0.5rem 0 0 0;
+}
+
+.database th:last-child {
+  border-radius: 0 0.5rem 0 0;
 }
 
 .database tr:nth-child(even) {
-  background-color: white;
+  background-color: #eeeeee;
 }
 
 .database thead {
-  background-color: #7a7a7a;
+  background-color: #989898;
   color: white;
 }
