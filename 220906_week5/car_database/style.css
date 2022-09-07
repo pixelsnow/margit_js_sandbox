@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Assistant&display=swap");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+html {
+  background: linear-gradient(to top, #75d8d3, #ffdcb5) no-repeat fixed center
+    center/cover;
+  font-family: "Assistant", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 1rem;
+  width: 80%;
+  max-width: 1200px;
+  min-width: 700px;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.9rem;
+}
+
+.search {
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 0 1rem 0;
+  padding: 2rem;
+}
+
+.search_flexbox {
+  display: flex;
+  justify-content: center;
+}
+
+.search h2 {
+  margin-right: 2rem;
+}
+
+#search_form {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+#search_form input {
+  padding: 0.5rem;
+  border: none;
+  background-color: #eeeeee;
+  width: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem 1rem;
+}
+#search_form input::placeholder {
+  color: #7a7a7a;
+}
+
+#search_form button {
+  border: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding: 0.8rem 1rem 0.5rem;
+  background-color: #419c73;
+  color: white;
+  cursor: pointer;
+}
+
+#search_form button:hover {
+  background-color: #3a926a;
+}
+
+#search_result {
+  text-align: center;
+  margin: 0;
+}
+
+.database_handling {
+  padding: 2rem 3rem 2.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.insert_data {
+  width: 30%;
+}
+#add_car {
+  margin: 1.4rem 0 0;
+}
+#add_car div {
+  margin: 0.4rem 0;
+}
+
+#add_car input {
+  width: 100%;
+  background-color: #eeeeee;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+#add_car label {
+  color: #7a7a7a;
+  line-height: 1.6;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  margin-top: 1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  background-color: blueviolet;
+  color: white;
+  cursor: pointer;
+}
+
+.buttons button[type="submit"] {
+  background-color: #419c73;
+}
+
+.buttons button:hover[type="submit"] {
+  background-color: #3a926a;
+}
+
+.buttons button[type="reset"] {
+  background-color: #7a7a7a;
+}
+
+.buttons button:hover[type="reset"] {
+  background-color: #717171;
+}
+
+#input_error {
+  background-color: #ffdcb5;
+  border-radius: 0.5rem;
+}
+
+.database {
+  width: 60%;
+}
+
+.database table {
+  margin: 2rem 0 0;
+  background-color: #eeeeee;
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+}
+
+.database table tbody {
+  border-bottom: 3px solid #7a7a7a;
+}
+
+.database th,
+td {
+  padding: 0.5rem 0.5rem;
+}
+
+.database th {
+  font-weight: inherit;
+  text-align: left;
+}
+
+.database tr:nth-child(even) {
+  background-color: white;
+}
+
+.database thead {
+  background-color: #7a7a7a;
+  color: white;
+}
