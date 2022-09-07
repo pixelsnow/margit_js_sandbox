@@ -164,7 +164,7 @@ h2 {
 }
 
 .database table {
-  margin: 2rem 0 0;
+  margin: 2rem 0;
   background-color: #eeeeee;
   border-collapse: collapse;
   table-layout: auto;
