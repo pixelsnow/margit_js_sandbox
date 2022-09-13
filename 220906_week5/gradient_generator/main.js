@@ -8,7 +8,7 @@ let c1 = "#98ecc0";
 let c2 = "#9e7cee";
 
 const updateBackground = () => {
-  body.style.background = `linear-gradient(to ${dir}, ${c1}, ${c2}) no-repeat fixed
+  document.body.style.background = `linear-gradient(to ${dir}, ${c1}, ${c2}) no-repeat fixed
     center center/cover`;
   css.textContent = `linear-gradient(to ${dir}, ${c1}, ${c2});`;
 };
