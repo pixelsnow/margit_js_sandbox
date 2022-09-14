@@ -202,9 +202,15 @@ footer {
     display: block;
   }
 
-  #hamburger.active {
-  }
   .main-menu {
     display: none;
+    background-color: white;
+  }
+
+  nav.responsive ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 4rem;
   }
 }

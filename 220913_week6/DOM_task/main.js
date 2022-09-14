@@ -1,6 +1,8 @@
 const header = document.querySelector("header");
 const top_button = document.querySelector("#top");
 const hamburger = document.querySelector("#hamburger");
+const nav = document.querySelector(".navbar");
+const links = document.querySelectorAll(".main-menu li");
 
 window.onscroll = function () {
   scrollFunction();
@@ -23,6 +25,18 @@ const getToTop = () => {
 
 top.addEventListener("click", getToTop);
 
-const mobMenu = () => {};
+const mobMenu = () => {
+  if (nav.classList.contains("responsive")) {
+    nav.classList.remove("responsive");
+    document.body.style.overflow = ""; /* stopping background scrolling */
+  } else {
+    nav.classList.add("responsive");
+    document.body.style.overflow = "hidden";
+  }
+};
 
 hamburger.addEventListener("click", mobMenu);
+
+for (const link of links) {
+  link.addEventListener("click", mobMenu);
+}
