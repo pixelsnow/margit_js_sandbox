@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM example</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1><a href="#">Margit Tennosaar</a></h1>
+      </div>
+      <nav>
+        <button id="mob_button">
+          <span class="material-icons"> menu </span>
+        </button>
+        <ul>
+          <li><a href="#section1">First</a></li>
+          <li><a href="#section2">Second</a></li>
+          <li><a href="#section3">Third</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="section1">
+        <h2>First</h2>
+        <button id="modal-btn" class="btn">Don't click me</button>
+      </section>
+      <section id="section2"><h2>Second</h2></section>
+      <section id="section3"><h2>Third</h2></section>
+
+      <div id="modal-bg" class="overlay">
+        <div class="modal">
+          <h2>Modal</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste
+            sed, officia voluptatem dolorum, voluptates repellendus quas sint
+            laboriosam, dolorem voluptatibus quisquam unde iure at quae? A
+            dolores dolor consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste
+            sed, officia voluptatem dolorum, voluptates repellendus quas sint
+            laboriosam, dolorem voluptatibus quisquam unde iure at quae? A
+            dolores dolor consectetur.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias iste
+            sed, officia voluptatem dolorum, voluptates repellendus quas sint
+            laboriosam, dolorem voluptatibus quisquam unde iure at quae? A
+            dolores dolor consectetur.
+          </p>
+          <button class="btn close">x</button>
+        </div>
+      </div>
+    </main>
+    <footer id="contact">
+      <p>Copyright &copy 2022</p>
+      <button class="btn" id="back_to_top">
+        Back to Top <span class="material-icons"> arrow_upward </span>
+      </button>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
