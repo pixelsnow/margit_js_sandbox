@@ -1,6 +1,6 @@
 const startBtn = document.querySelector("#start");
-const circles = document.querySelectorAll(".circle");
 const stopBtn = document.querySelector("#stop");
+const circles = document.querySelectorAll(".circle");
 
 circles.forEach((circle) => {
   circle.addEventListener("click", () => {
@@ -11,4 +11,10 @@ circles.forEach((circle) => {
 const startGame = () => {
   console.log("game started");
 };
+
+const endGame = () => {
+  console.log("game ended");
+};
+
 startBtn.addEventListener("click", startGame);
+stopBtn.addEventListener("click", endGame);
