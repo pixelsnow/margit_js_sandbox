@@ -49,22 +49,22 @@ section {
   box-shadow: 2px 4px rgba(0, 0, 0, 0.465);
 }
 
-#circle1.active {
+#circle0.active {
   background: url("img/flies.jpg");
   background-size: contain;
 }
 
-#circle2.active {
+#circle1.active {
   background: url("img/silverfish.jpg");
   background-size: contain;
 }
 
-#circle3.active {
+#circle2.active {
   background: url("img/fly.jpg");
   background-size: contain;
 }
 
-#circle4.active {
+#circle3.active {
   background: url("img/roach.jpg");
   background-size: contain;
 }

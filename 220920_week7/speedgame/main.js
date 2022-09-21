@@ -14,72 +14,80 @@ circles.forEach((circle) => {
   circle.addEventListener("click", () => {
     console.log(`${circle.id} clicked`);
     if (circle.classList.contains("active")) {
-      score.textContent = +score.textContent + 1;
-      clicked = true;
-    } else endGame();
+      // If clicked correct
+      score.textContent = +score.textContent + 1; // Increase score
+      clicked = true; // Toggle the clicked flag
+    } else {
+      endGame();
+    }
   });
 });
-
-const getRand = () => {
-  return Math.floor(Math.random() * 4);
-};
 
 const nextCircle = () => {
   let newCircle;
   do {
-    newCircle = getRand();
+    // Getting a new random number until there's no repetition
+    newCircle = Math.floor(Math.random() * 4);
   } while (prev === newCircle);
   return newCircle;
 };
 
 const activateCircle = () => {
-  // Deactivating all circles
-  circles.forEach((circle) => circle.classList.remove("active"));
-  const next = nextCircle(); // Getting the index for the next circle
-  console.log(`next circle is ${next}`);
-  circles[next].classList.add("active"); // Activating the circle
-  prev = next; // Remembering the circle in order to avoid repeatition
   if (!clicked) {
+    // Checking if the previous circle was clicked
     console.log("circle wasn't clicked, game over");
     notOver = false;
     endGame();
+  } else {
+    // Deactivating all circles
+    circles.forEach((circle) => circle.classList.remove("active"));
+    const next = nextCircle(); // Getting the index for the next circle
+    console.log(`next circle is set to ${next}`);
+    circles[next].classList.add("active"); // Activating the circle
+    prev = next; // Remembering the circle in order to avoid repeatition
+    clicked = false; // Resetting the clicked flag
   }
-  clicked = false;
 };
 
-/* const loopTimeout = (delay) => {
-  setTimeout(() => {
-    activateCircle();
-  }, delay).then(() => loopTimeout(delay - 10));
-}; */
+const loopTimeout = (delay) => {
+  if (!notOver) return;
+  else {
+    setTimeout(() => {
+      console.log(`activating a circle with delay of ${delay}`);
+      activateCircle();
+      return loopTimeout(delay - 10);
+    }, delay);
+  }
+};
 
 const startGame = () => {
+  clicked = true;
+  notOver = true;
+  prev = -1;
   console.log("game started");
   stopBtn.classList.remove("hidden"); // Switching buttons
   startBtn.classList.add("hidden");
   activateCircle(); // Activating first circle
-  /* loopTimeout(1000); */
-  let delay = 1000; // Setting the delay
-  for (let i = 1; i < 10; i++) {
-    setTimeout(activateCircle, delay * i);
-    if (!notOver) break;
+  if (notOver) {
+    console.log("not over");
+    loopTimeout(1000);
   }
 };
 
 const endGame = () => {
   console.log("game ended");
-  circles.forEach((circle) => circle.classList.remove("active"));
-  stopBtn.classList.add("hidden");
-  startBtn.classList.remove("hidden");
-  modal.classList.remove("hidden");
+  // Deactivating all circles
   notOver = false;
-  prev = -1;
+  circles.forEach((circle) => circle.classList.remove("active"));
+  stopBtn.classList.add("hidden"); // Switching buttons
+  startBtn.classList.remove("hidden");
+  modal.classList.remove("hidden"); // Triggering modal
   resScore.textContent = score.textContent;
-  score.textContent = 0;
 };
 
 const closeModal = () => {
   modal.classList.add("hidden");
+  score.textContent = "0";
   console.log("modal closed");
 };
 
