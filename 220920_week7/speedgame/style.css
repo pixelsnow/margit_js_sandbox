@@ -24,7 +24,7 @@ p {
 
 .main-text span {
   color: #bb1d1d;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 section {
@@ -46,6 +46,7 @@ section {
   background: white;
   box-shadow: 5px black;
   cursor: crosshair;
+  box-shadow: 2px 4px rgba(0, 0, 0, 0.465);
 }
 
 #circle1.active {
