@@ -23,11 +23,18 @@ const renderLives = () => {
   displayLives.innerHTML = res;
 };
 
+const playSound = (i) => {
+  let sound;
+  if (i === 0) sound = new Audio("src/crack5.mp3");
+  else if (i === 1) sound = new Audio("src/popcorn1.mp3");
+  else if (i === 2) sound = new Audio("src/crack4.mp3");
+  else sound = new Audio("src/slime_cut.mp3");
+  sound.play();
+};
+
 const clickCircle = (i) => {
-  console.log(`${i} clicked`);
   if (i === active) {
-    const sound = new Audio("src/slime_cut.mp3");
-    sound.play();
+    playSound(i);
     // If clicked correct and for the first time, increase score
     if (!clickedCorrect) score.textContent = +score.textContent + 1;
     clickedCorrect = true; // Toggle the clicked flag
@@ -78,10 +85,10 @@ const renderResult = () => {
   resScore.textContent = score.textContent;
   if (score.textContent < 5) {
     resultMsg.textContent = `didn't even try did ya`;
-    resultMsg2.textContent = `your house has been taken over`;
+    resultMsg2.textContent = `your house has been taken over by crawlies`;
   } else if (score.textContent < 25) {
     resultMsg.textContent = `you tried.`;
-    resultMsg2.textContent = `your house is clear for a day or two`;
+    resultMsg2.textContent = `your house is clear for now`;
   } else if (score.textContent < 50) {
     resultMsg.textContent = `we got a professional exterminator in the house, huh`;
     resultMsg2.textContent = `GOT THEM`;
