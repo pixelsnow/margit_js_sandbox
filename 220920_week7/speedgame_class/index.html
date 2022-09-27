@@ -16,13 +16,9 @@
       <section>
         <h1>BE QUICK</h1>
         <div class="bar">
-          <p class="main-text" id="lives">
-            <span class="material-symbols-outlined">bug_report</span>
-            <span class="material-symbols-outlined">bug_report</span>
-            <span class="material-symbols-outlined">bug_report</span>
-          </p>
+          <p class="main-text" id="lives"></p>
           <p class="main-text">
-            CRAWLIES KILLED:
+            crawlies eliminated:
             <span id="score">0</span>
           </p>
         </div>
@@ -33,15 +29,21 @@
           <div id="circle2" class="circle"></div>
           <div id="circle3" class="circle"></div>
         </div>
-        <button id="start">start killing</button>
-        <button id="stop" class="hidden">stop killing</button>
+        <button id="start">start hunting</button>
+        <button id="stop" class="hidden">stop hunting</button>
       </section>
       <section class="overlay hidden">
         <div class="modal">
           <h2>GAME OVER</h2>
-          <p id="result">Your house has been taken over by crawlies</p>
-          <p>You killed: <span id="result-score"></span></p>
-          <button class="close">X</button>
+          <div class="highlight">
+            <p id="score-legend">
+              you caught <span id="result-score"></span> crawlies
+            </p>
+          </div>
+
+          <p id="result"></p>
+          <p id="result2"></p>
+          <button class="close">x</button>
         </div>
       </section>
     </main>

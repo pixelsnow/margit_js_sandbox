@@ -6,12 +6,15 @@ const resScore = document.querySelector("#result-score");
 const modal = document.querySelector(".overlay");
 const closeBtn = document.querySelector(".modal .close");
 const displayLives = document.querySelector("#lives");
+const resultMsg = document.querySelector("#result");
+const resultMsg2 = document.querySelector("#result2");
 
 let timer;
 let active = 0;
 let pace = 1000;
 let lives = 3;
 let clickedCorrect = true;
+let bugSound;
 
 const renderLives = () => {
   let res = "";
@@ -23,12 +26,13 @@ const renderLives = () => {
 const clickCircle = (i) => {
   console.log(`${i} clicked`);
   if (i === active) {
-    // If clicked correct
-    score.textContent = +score.textContent + 1; // Increase score
+    const sound = new Audio("src/slime_cut.mp3");
+    sound.play();
+    // If clicked correct and for the first time, increase score
+    if (!clickedCorrect) score.textContent = +score.textContent + 1;
     clickedCorrect = true; // Toggle the clicked flag
   } else {
     lives--;
-    console.log("lives left: ", lives);
     if (!lives) endGame();
   }
 };
@@ -47,11 +51,8 @@ const nextCircle = (prev) => {
 };
 
 const startGame = () => {
-  stopBtn.classList.remove("hidden"); // Switching buttons
-  startBtn.classList.add("hidden");
   if (!clickedCorrect) {
     lives--;
-    console.log("lives left: ", lives);
   }
   renderLives();
   if (!lives) return endGame(); // Ending game if out of lives
@@ -64,16 +65,43 @@ const startGame = () => {
   pace -= 10;
 };
 
+const clickStart = () => {
+  const sound = new Audio("src/click1.mp3");
+  stopBtn.classList.remove("hidden"); // Switching buttons
+  startBtn.classList.add("hidden");
+  circles.forEach((circle) => (circle.style.pointerEvents = "auto"));
+  sound.play();
+  startGame();
+};
+
+const renderResult = () => {
+  resScore.textContent = score.textContent;
+  if (score.textContent < 5) {
+    resultMsg.textContent = `didn't even try did ya`;
+    resultMsg2.textContent = `your house has been taken over`;
+  } else if (score.textContent < 25) {
+    resultMsg.textContent = `you tried.`;
+    resultMsg2.textContent = `your house is clear for a day or two`;
+  } else if (score.textContent < 50) {
+    resultMsg.textContent = `we got a professional exterminator in the house, huh`;
+    resultMsg2.textContent = `GOT THEM`;
+  } else resultMsg.textContent = `hello bot`;
+};
+
 const endGame = () => {
+  const sound = new Audio("src/spook2.mp3");
   clearTimeout(timer);
   modal.classList.remove("hidden"); // Triggering modal
-  resScore.textContent = score.textContent;
+  renderResult();
+  sound.play();
 };
 
 const resetGame = () => {
   window.location.reload();
 };
 
-startBtn.addEventListener("click", startGame);
+startBtn.addEventListener("click", clickStart);
 stopBtn.addEventListener("click", endGame);
 closeBtn.addEventListener("click", resetGame);
+
+renderLives();
