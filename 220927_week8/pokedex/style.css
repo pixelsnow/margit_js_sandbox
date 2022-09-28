@@ -1,3 +1,9 @@
+:root {
+  --dark-color: #444;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,25 +11,58 @@
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-  background: linear-gradient(to bottom, #a3e0cf, #6d87d5) no-repeat fixed;
+  font-family: "Raleway", sans-serif;
+
+  background: linear-gradient(to bottom, #b2f9d0, #6d70d5) no-repeat fixed;
+  color: var(--dark-color);
 }
 
-h1 {
-  margin: 2rem 0;
-}
 header {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
+h1 {
+  margin: 3rem 0;
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 #search {
+  min-width: 300px;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
+}
+
+#gens ul {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#gens ul li button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: white;
 }
 
 main {
@@ -31,35 +70,50 @@ main {
   justify-content: center;
 }
 
-.grid-container {
-  margin: auto;
-
+.card-container {
+  /*width: 70vw;
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: left;*/
+  gap: 2rem;
   display: grid;
-  gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
 }
 
 .card {
-  background-color: rgb(255, 255, 255);
+  color: white;
   min-height: 300px;
   width: 200px;
   border-radius: 10px;
+  box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.276);
 }
 
 .card .image {
   height: 200px;
-  background-color: rgb(233, 233, 233);
   border-radius: 10px 10px 0 0;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .image img {
+  max-height: 160px;
+  max-width: 160px;
 }
 
 .card .info {
+  background-color: var(--dark-color);
   padding: 1rem;
   height: 100px;
   border-radius: 0 0 10px 10px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .card .info h2 {
-  align-self: center;
+  font-weight: 300;
 }
