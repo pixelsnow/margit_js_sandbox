@@ -53,13 +53,15 @@ const renderCards = () => {
     let typesHtml = "";
     card.types.forEach(
       (type) =>
-        (typesHtml += `<img src=${getTypeImg(type)} alt="${type}"></img>`)
+        (typesHtml += `<img src="${getTypeImg(type)}" alt="${type}"></img>`)
     );
     cards.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
+      <div class="types">${typesHtml}</div>
+      <div class="gen">${card.gen}</div>
         <div class="image"><img src="${card.img}" alt="${card.name} picture"></div>
-        <div class="info"><h2>#${card.id} ${card.name}</h2><div class="types">${typesHtml}</div></div>
+        <div class="info"><h2>#${card.id} ${card.name}</h2></div>
       </div>`
     );
   });
@@ -67,8 +69,8 @@ const renderCards = () => {
 
 // Returns a link to an image
 const setImg = (data) => {
-  let img = data.sprites.other.dream_world.front_default;
-  if (!img) img = data.sprites.other["official-artwork"].front_default;
+  let img = data.sprites.other["official-artwork"].front_default;
+  if (!img) img = data.sprites.other.dream_world.front_default;
   if (!img) img = data.sprites.other.home.front_default;
   if (!img) img = data.sprites.front_default;
   if (!img)
