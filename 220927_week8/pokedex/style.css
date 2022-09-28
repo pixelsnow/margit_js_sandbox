@@ -13,8 +13,7 @@
 
 body {
   font-family: "Raleway", sans-serif;
-
-  background: linear-gradient(to bottom, #b2f9d0, #6d70d5) no-repeat fixed;
+  background: linear-gradient(to bottom, #fdbdad, #6d70d5) no-repeat fixed;
   color: var(--dark-color);
 }
 
@@ -80,6 +79,7 @@ main {
   gap: 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin: 0 0 3rem 0;
 }
 
 .card {
