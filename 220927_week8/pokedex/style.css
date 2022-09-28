@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: linear-gradient(to bottom, #a3e0cf, #6d87d5) no-repeat fixed;
+}
+
+h1 {
+  margin: 2rem 0;
+}
+header {
+  padding: 2rem;
+  text-align: center;
+}
+
+#search {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  margin: auto;
+
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.card {
+  background-color: rgb(255, 255, 255);
+  min-height: 300px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card .image {
+  height: 200px;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px 10px 0 0;
+}
+
+.card .info {
+  padding: 1rem;
+  height: 100px;
+  border-radius: 0 0 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .info h2 {
+  align-self: center;
+}
