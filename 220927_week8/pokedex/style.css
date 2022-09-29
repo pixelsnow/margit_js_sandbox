@@ -75,6 +75,11 @@ h1 {
   color: white;
   border: 1px solid white;
   box-shadow: 1px 1px 1px var(--dark-color-alpha);
+  transition: 0.1s;
+}
+
+#gens ul li button:hover {
+  box-shadow: 0 0 5px white;
 }
 
 main {
@@ -87,7 +92,7 @@ main {
    display: flex;
   flex-wrap: wrap;
   justify-content: left;*/
-  gap: 1rem;
+  gap: 1.5rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   margin: 0 0 3rem 0;
@@ -101,7 +106,7 @@ main {
   border-radius: var(--border-rad);
   box-shadow: 2px 1px 2px var(--dark-color-alpha);
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .card:hover {
