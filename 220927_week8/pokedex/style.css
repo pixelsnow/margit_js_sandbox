@@ -3,6 +3,8 @@
   --dark-color-alpha: rgba(0, 0, 0, 0.3);
   --light-color-alpha: rgba(255, 255, 255, 0.3);
   --border-rad: 0.5rem;
+  --card-height: 250px;
+  --card-width: 190px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
@@ -94,8 +96,8 @@ main {
 .card {
   position: relative;
   color: white;
-  min-height: 200px;
-  width: 150px;
+  height: var(--card-height);
+  width: var(--card-width);
   border-radius: var(--border-rad);
   box-shadow: 2px 1px 2px var(--dark-color-alpha);
   cursor: pointer;
@@ -108,7 +110,7 @@ main {
 
 .card .image {
   background: var(--light-color-alpha);
-  height: 150px;
+  height: var(--card-width);
   border-radius: var(--border-rad) var(--border-rad) 0 0;
   border-top: 1px solid white;
   border-left: 1px solid white;
@@ -119,14 +121,15 @@ main {
 }
 
 .card .image img {
-  max-height: 120px;
-  max-width: 120px;
+  max-height: calc(var(--card-width) * 0.85);
+  max-width: calc(var(--card-width) * 0.85);
+  margin-top: 0.4rem;
 }
 
 .card .info {
   background: var(--dark-color-alpha);
   padding: 0.5rem;
-  height: 50px;
+  height: calc(var(--card-height) - var(--card-width));
   border-radius: 0 0 var(--border-rad) var(--border-rad);
   display: flex;
   justify-content: center;
