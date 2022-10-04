@@ -122,7 +122,6 @@ const fetchPoke = async () => {
   pokeData = data.results;
   // Getting full info about all pokemons and rewriting the array
   await fillPokeData();
-  console.table(pokeData);
   // Rendering to HTML
   renderCards();
 };
