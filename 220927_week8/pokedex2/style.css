@@ -1,6 +1,7 @@
 :root {
   --dark-color: rgb(91, 91, 91);
   --dark-color-alpha: rgba(0, 0, 0, 0.3);
+  --dark-color-alpha-2: rgba(0, 0, 0, 0.6);
   --light-color-alpha: rgba(255, 255, 255, 0.25);
   --border-rad: 0.5rem;
   --card-height: 250px;
@@ -85,6 +86,10 @@ h1 {
   cursor: pointer;
 }
 
+#gens ul li button.picked {
+  background: var(--dark-color-alpha-2);
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -129,9 +134,9 @@ main {
 }
 
 .card .image img {
-  max-height: calc(var(--card-width) * 0.8);
-  max-width: calc(var(--card-width) * 0.8);
-  margin-top: 0.4rem;
+  max-height: calc(var(--card-width) * 0.77);
+  max-width: calc(var(--card-width) * 0.77);
+  margin-top: 0.5rem;
 }
 
 .card .info {
@@ -184,25 +189,32 @@ main {
 
 #types {
   margin: 0 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
 }
 
+#types div {
+  position: relative;
+}
 #types label img {
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
 }
 
-#types input {
-  display: none;
+#types div input {
+  opacity: 0;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
 }
 
 #types input:checked + label img {
   -webkit-filter: drop-shadow(0 0 10px white);
   filter: drop-shadow(0 0 10px white);
 }
-
-#types input:checked {
-}
-
 .normal {
 }
 .fire {

@@ -113,7 +113,7 @@ const fillPokeData = async () => {
     const response = await fetch(pokeData[i].url);
     const data = await response.json();
     const img = setImg(data);
-    /* console.log(i); */
+    console.log(i);
     const types = getTypes(data.types);
     // Fetching generation info from the species page
     /* */
@@ -149,7 +149,7 @@ const fetchPoke = async () => {
   startLoader();
   // Fetching the full list of pokemons in the database
   const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=905&offset=0"
   );
   const data = await response.json();
   // Saving the list to the array
@@ -165,6 +165,8 @@ fetchPoke();
 
 genButtons.forEach((button, i) => {
   button.addEventListener("click", () => {
+    genButtons.forEach((btn) => btn.classList.remove("picked"));
+    button.classList.add("picked");
     if (i === 8) renderCards(pokeData);
     else renderCards(pokeData.filter((pokemon) => pokemon.gen === i + 1));
   });
