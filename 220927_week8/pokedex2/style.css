@@ -133,7 +133,7 @@ main {
 }
 
 .card:hover .image {
-  filter: drop-shadow(0 0 0.65rem #f3bfa9);
+  filter: drop-shadow(0 0 0.65rem #ffffff);
 }
 
 .card .image img {
