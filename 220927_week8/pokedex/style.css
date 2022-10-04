@@ -105,7 +105,6 @@ main {
   width: var(--card-width);
   border-radius: var(--border-rad);
   box-shadow: 2px 1px 2px var(--dark-color-alpha);
-  cursor: pointer;
   transition: 0.25s;
 }
 
@@ -178,6 +177,7 @@ main {
   align-items: center;
   font-size: 0.8rem;
 }
+
 .normal {
 }
 .fire {
@@ -216,4 +216,11 @@ main {
 }
 
 @media screen {
+}
+
+footer {
+  background-color: var(--dark-color-alpha);
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 0.5rem;
 }

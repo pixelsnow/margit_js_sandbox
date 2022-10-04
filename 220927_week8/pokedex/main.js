@@ -95,6 +95,7 @@ const fillPokeData = async () => {
     const response = await fetch(pokeData[i].url);
     const data = await response.json();
     const img = setImg(data);
+    console.log(i);
     const types = getTypes(data.types);
     // Fetching generation info from the species page
     const response2 = await fetch(data.species.url);
