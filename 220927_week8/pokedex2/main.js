@@ -204,3 +204,5 @@ types.addEventListener("change", () => {
     })
   );
 });
+
+/* TODO: FIX glow issues on types */
