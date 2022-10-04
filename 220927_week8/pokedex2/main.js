@@ -4,6 +4,8 @@ const cards = document.querySelector(".card-container");
 const genButtons = document.querySelectorAll("#gens button");
 const footer = document.querySelector("footer");
 const loader = document.querySelector("#loader");
+const types = document.querySelector("#types");
+const checkboxes = document.querySelectorAll("#types input");
 
 let pokeData = [];
 
@@ -166,4 +168,37 @@ genButtons.forEach((button, i) => {
     if (i === 8) renderCards(pokeData);
     else renderCards(pokeData.filter((pokemon) => pokemon.gen === i + 1));
   });
+});
+
+search.addEventListener("input", () => {
+  renderCards(
+    pokeData.filter((pokemon) => {
+      return (
+        pokemon.name.slice(0, search.value.trim().length) ==
+        search.value.trim().toLowerCase()
+      );
+    })
+  );
+});
+
+function multipleExist(arr, values) {
+  return values.every((value) => {
+    return arr.includes(value);
+  });
+}
+
+types.addEventListener("change", () => {
+  let checkedTypes = [];
+  checkboxes.forEach((type) => {
+    if (type.checked) {
+      type.classList.add("checked");
+      checkedTypes.push(type.value);
+    } else type.classList.remove("checked");
+  });
+  console.log(checkedTypes);
+  renderCards(
+    pokeData.filter((pokemon) => {
+      return multipleExist(pokemon.types, checkedTypes);
+    })
+  );
 });

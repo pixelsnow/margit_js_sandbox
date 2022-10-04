@@ -1,7 +1,7 @@
 :root {
   --dark-color: rgb(91, 91, 91);
   --dark-color-alpha: rgba(0, 0, 0, 0.3);
-  --light-color-alpha: rgba(255, 255, 255, 0.3);
+  --light-color-alpha: rgba(255, 255, 255, 0.25);
   --border-rad: 0.5rem;
   --card-height: 250px;
   --card-width: 190px;
@@ -9,7 +9,9 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
-* {
+*,
+*:after,
+*:before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,7 +20,7 @@
 body {
   font-family: "Raleway", sans-serif;
   font-weight: 300;
-  background: linear-gradient(to bottom, #f3bfa9, #bd96d7, #515598) no-repeat
+  background: linear-gradient(to bottom, #f3bfa9, #9f6ec0, #414485) no-repeat
     fixed;
   color: white;
 }
@@ -110,8 +112,8 @@ main {
 }
 
 .card:hover {
-  box-shadow: 0 0 10px white;
-  filter: drop-shadow(0 0 0.75rem #ffa882);
+  box-shadow: 0 0 5px white;
+  filter: drop-shadow(0 0 0.75rem #ff8753);
 }
 
 .card .image {
@@ -178,6 +180,27 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
+}
+
+#types {
+  margin: 0 0 1rem 0;
+}
+
+#types label img {
+  width: 2rem;
+  height: 2rem;
+}
+
+#types input {
+  display: none;
+}
+
+#types input:checked + label img {
+  -webkit-filter: drop-shadow(0 0 10px white);
+  filter: drop-shadow(0 0 10px white);
+}
+
+#types input:checked {
 }
 
 .normal {
