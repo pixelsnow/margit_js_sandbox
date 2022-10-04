@@ -2,7 +2,7 @@
   --dark-color: rgb(91, 91, 91);
   --dark-color-alpha: rgba(0, 0, 0, 0.3);
   --dark-color-alpha-2: rgba(0, 0, 0, 0.6);
-  --light-color-alpha: rgba(255, 255, 255, 0.25);
+  --light-color-alpha: rgba(255, 255, 255, 0.2);
   --border-rad: 0.5rem;
   --card-height: 250px;
   --card-width: 190px;
@@ -115,12 +115,6 @@ main {
   box-shadow: 2px 1px 2px var(--dark-color-alpha);
   transition: 0.25s;
 }
-
-.card:hover {
-  box-shadow: 0 0 5px white;
-  filter: drop-shadow(0 0 0.75rem #ff8753);
-}
-
 .card .image {
   background: var(--light-color-alpha);
   height: var(--card-width);
@@ -131,6 +125,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+}
+.card:hover {
+  box-shadow: 0 0 5px white;
+  filter: drop-shadow(0 0 0.3rem #ff4d0079);
+}
+
+.card:hover .image {
+  filter: drop-shadow(0 0 0.65rem #f3bfa9);
 }
 
 .card .image img {
