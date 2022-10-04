@@ -1,6 +1,9 @@
 const gens = document.querySelectorAll("#gens ul li button");
 const search = document.querySelector("#search");
 const cards = document.querySelector(".card-container");
+const genButtons = document.querySelectorAll("#gens button");
+const footer = document.querySelector("footer");
+const loader = document.querySelector("#loader");
 
 let pokeData = [];
 
@@ -48,7 +51,8 @@ const getTypeImg = (type) => {
 };
 
 // Renders to HTML
-const renderCards = () => {
+const renderCards = (pokeData) => {
+  cards.innerHTML = "";
   pokeData.forEach((card) => {
     let typesHtml = "";
     card.types.forEach(
@@ -88,6 +92,18 @@ const getTypes = (types) => {
   return res;
 };
 
+const determineGen = (i) => {
+  if (i < 151) return 1;
+  else if (i < 251) return 2;
+  else if (i < 386) return 3;
+  else if (i < 493) return 4;
+  else if (i < 649) return 5;
+  else if (i < 721) return 6;
+  else if (i < 809) return 7;
+  else if (i < 905) return 8;
+  else return 0;
+};
+
 // Rewrites pokeData with full info
 const fillPokeData = async () => {
   for (let i = 0; i < pokeData.length; i++) {
@@ -95,12 +111,17 @@ const fillPokeData = async () => {
     const response = await fetch(pokeData[i].url);
     const data = await response.json();
     const img = setImg(data);
-    console.log(i);
+    /* console.log(i); */
     const types = getTypes(data.types);
     // Fetching generation info from the species page
-    const response2 = await fetch(data.species.url);
-    const data2 = await response2.json();
-    const gen = +data2.generation.url[data2.generation.url.length - 2];
+    /* */
+    let gen;
+    if (i <= 905) gen = determineGen(i);
+    else {
+      const response2 = await fetch(data.species.url);
+      const data2 = await response2.json();
+      gen = +data2.generation.url[data2.generation.url.length - 2];
+    }
     // Saving info into an array of objects
     pokeData[i] = {
       id: data.id,
@@ -112,7 +133,18 @@ const fillPokeData = async () => {
   }
 };
 
+const startLoader = () => {
+  footer.classList.add("hidden");
+  loader.classList.remove("hidden");
+};
+
+const stopLoader = () => {
+  footer.classList.remove("hidden");
+  loader.classList.add("hidden");
+};
+
 const fetchPoke = async () => {
+  startLoader();
   // Fetching the full list of pokemons in the database
   const response = await fetch(
     "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0"
@@ -122,8 +154,16 @@ const fetchPoke = async () => {
   pokeData = data.results;
   // Getting full info about all pokemons and rewriting the array
   await fillPokeData();
+  stopLoader();
   // Rendering to HTML
-  renderCards();
+  renderCards(pokeData);
 };
 
 fetchPoke();
+
+genButtons.forEach((button, i) => {
+  button.addEventListener("click", () => {
+    if (i === 8) renderCards(pokeData);
+    else renderCards(pokeData.filter((pokemon) => pokemon.gen === i + 1));
+  });
+});
