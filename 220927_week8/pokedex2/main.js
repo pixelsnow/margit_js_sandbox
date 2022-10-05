@@ -183,11 +183,11 @@ search.addEventListener("input", () => {
   );
 });
 
-function multipleExist(arr, values) {
+const multipleExist = (arr, values) => {
   return values.every((value) => {
     return arr.includes(value);
   });
-}
+};
 
 types.addEventListener("change", () => {
   let checkedTypes = [];
