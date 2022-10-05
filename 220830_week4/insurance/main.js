@@ -20,17 +20,11 @@ const calcScore = (e) => {
   if (age.value >= 66) increase += 60;
   res += res * increase * 0.01;
 
-  console.log("age increase: ", increase);
-  console.log("current result: " + res);
-
   increase = 0;
   health.forEach((item) => {
     if (item.checked) increase++;
   });
   res += res * increase * 0.01;
-
-  console.log("health increase: ", increase);
-  console.log("current result: " + res);
 
   increase = 0;
   habits.forEach((item) => {
@@ -41,13 +35,9 @@ const calcScore = (e) => {
   });
   res += res * increase * 0.01;
 
-  console.log("habit increase: ", increase);
-  console.log("current result: " + res);
-
   document.querySelector(".result_container").style.borderWidth = "1px";
-  document.querySelector("#result").textContent = `${
-    username.value
-  }, your result is ${res.toFixed(0)}`;
+  document.querySelector("#result").textContent = `${username.value},
+    your result is ${res.toFixed(0)}`;
   form.reset();
 };
 

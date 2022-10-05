@@ -149,7 +149,7 @@ const fetchPoke = async () => {
   startLoader();
   // Fetching the full list of pokemons in the database
   const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=905&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=2000&offset=0"
   );
   const data = await response.json();
   // Saving the list to the array
