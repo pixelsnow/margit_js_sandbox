@@ -218,42 +218,6 @@ main {
   -webkit-filter: drop-shadow(0 0 10px white);
   filter: drop-shadow(0 0 10px white);
 }
-.normal {
-}
-.fire {
-}
-.water {
-}
-.grass {
-}
-.electric {
-}
-.ice {
-}
-.fighting {
-}
-.poison {
-}
-.ground {
-}
-.flying {
-}
-.psychic {
-}
-.bug {
-}
-.rock {
-}
-.ghost {
-}
-.dark {
-}
-.dragon {
-}
-.steel {
-}
-.fairy {
-}
 
 @media screen {
 }
@@ -268,8 +232,32 @@ footer {
 
 #loader {
   font-size: 1rem;
+  margin: 1rem;
+  background-color: #f3bfa9;
+}
+
+#loader div {
+  margin: auto;
 }
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 800px) {
+  .card-container {
+    /*width: 70vw;
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: left;*/
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 0 3rem 0;
+  }
+
+  .card {
+    width: 45vw;
+    height: calc(var(--card-height) * 45vw / var(--card-width));
+    max-width: var(--card-width);
+  }
 }
