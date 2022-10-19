@@ -8,6 +8,8 @@ const types = document.querySelector("#types");
 const checkboxes = document.querySelectorAll("#types input");
 
 let pokeData = [];
+let checkedTypes = [];
+let checkedGens = [];
 
 const getTypeImg = (type) => {
   switch (type) {
@@ -177,10 +179,38 @@ const fetchPoke = async () => {
 const multipleExist = (arr, values) =>
   values.every((value) => arr.includes(value));
 
+/* FILTER CLEARING FUNCTIONS */
+
+const clearSearch = () => {
+  search.value = "";
+};
+
+const clearGens = () => {
+  genButtons.forEach((btn, i) => {
+    if (i < genButtons.length - 1) {
+      btn.classList.remove("picked");
+    } else {
+      btn.classList.add("picked");
+    }
+  });
+};
+
+const clearTypes = () => {
+  checkedTypes.length = 0;
+  checkboxes.forEach((type) => {
+    type.checked = false;
+    type.classList.remove("checked");
+  });
+};
+
 /* EVENT LISTENERS */
 
 genButtons.forEach((button, i) => {
   button.addEventListener("click", () => {
+    // Clear search and type sorting
+    clearSearch();
+    clearTypes();
+    // Toggle buttons and filter
     genButtons.forEach((btn) => btn.classList.remove("picked"));
     button.classList.add("picked");
     if (i === 8) renderCards(pokeData);
@@ -189,6 +219,10 @@ genButtons.forEach((button, i) => {
 });
 
 search.addEventListener("input", () => {
+  // Clear gen and type sorting
+  clearGens();
+  clearTypes();
+  // Filter
   renderCards(
     pokeData.filter((pokemon) => {
       return (
@@ -200,7 +234,11 @@ search.addEventListener("input", () => {
 });
 
 types.addEventListener("change", () => {
-  let checkedTypes = [];
+  // Clear search and gen sorting
+  clearSearch();
+  clearGens();
+  // Filter according to checked types
+  checkedTypes = [];
   checkboxes.forEach((type) => {
     if (type.checked) {
       type.classList.add("checked");

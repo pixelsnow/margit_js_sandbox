@@ -48,8 +48,8 @@ h1 {
 }
 
 #search {
-  max-width: 300px;
-  min-width: 95vw;
+  max-width: 95vw;
+  min-width: 300px;
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem 1rem;
@@ -249,7 +249,14 @@ footer {
     --card-height: 200px;
     --card-width: 150px;
   }
+
   .card-container {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #search {
+    min-width: 90vw;
   }
 }
