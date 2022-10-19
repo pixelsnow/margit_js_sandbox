@@ -107,14 +107,16 @@ const determineGen = (i) => {
 };
 
 const fillPokeData = async () => {
-  const pokemons = await Promise.all(
+  // Rewrite pokeData array with data fetched about each pokemon
+  pokeData = await Promise.all(
     pokeData.map(async (poke) => {
       const resp = await fetch(poke.url);
       const data = await resp.json();
       return data;
     })
   );
-  pokeData = pokemons.map((pokemon, i) => {
+  // Rewrite pokeData array with objects containing pokemon info
+  pokeData = pokeData.map((pokemon, i) => {
     const img = setImg(pokemon);
     const types = getTypes(pokemon.types);
     const gen = determineGen(i);
@@ -127,6 +129,7 @@ const fillPokeData = async () => {
       species: pokemon.species.url,
     };
   });
+  // For pokemons beyond 905, fetch species page and save to array
   const species = await Promise.all(
     pokeData.slice(905).map(async (poke) => {
       const resp = await fetch(poke.species);
@@ -134,40 +137,13 @@ const fillPokeData = async () => {
       return data;
     })
   );
-  console.log("species", species);
+  // console.log("species", species);
+  // overwrite generations for pokemons beyond 905
   for (let i = 0; i < species.length; i++) {
     pokeData[i + 905].gen =
       +species[i].generation.url[species[i].generation.url.length - 2];
   }
 };
-
-// Rewrites pokeData with full info
-/* const fillPokeData = async () => {
-  for (let i = 0; i < pokeData.length; i++) {
-    // Fetching pokemon data from the url
-    const response = await fetch(pokeData[i].url);
-    const data = await response.json();
-    const img = setImg(data);
-    // console.log(i);
-    const types = getTypes(data.types);
-    // Fetching generation info from the species page
-    let gen;
-    if (i <= 905) gen = determineGen(i);
-    else {
-      const response2 = await fetch(data.species.url);
-      const data2 = await response2.json();
-      gen = +data2.generation.url[data2.generation.url.length - 2];
-    }
-    // Saving info into an array of objects
-    pokeData[i] = {
-      id: data.id,
-      name: data.name,
-      img: img,
-      gen: gen,
-      types: types,
-    };
-  }
-}; */
 
 const startLoader = () => {
   footer.classList.add("hidden");

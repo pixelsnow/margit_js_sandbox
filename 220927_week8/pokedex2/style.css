@@ -96,13 +96,11 @@ main {
 }
 
 .card-container {
-  /*width: 70vw;
-   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;*/
+  width: 100%;
   gap: 1.5rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, var(--card-width));
+  justify-content: center;
   margin: 0 0 3rem 0;
 }
 
@@ -245,19 +243,4 @@ footer {
 }
 
 @media (max-width: 800px) {
-  .card-container {
-    /*width: 70vw;
-     display: flex;
-    flex-wrap: wrap;
-    justify-content: left;*/
-    gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0 0 3rem 0;
-  }
-
-  .card {
-    width: 45vw;
-    height: calc(var(--card-height) * 45vw / var(--card-width));
-    max-width: var(--card-width);
-  }
 }
