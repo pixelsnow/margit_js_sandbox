@@ -197,10 +197,7 @@ const clearGens = () => {
 
 const clearTypes = () => {
   checkedTypes.length = 0;
-  checkboxes.forEach((type) => {
-    type.checked = false;
-    type.classList.remove("checked");
-  });
+  checkboxes.forEach((type) => (type.checked = false));
 };
 
 /* EVENT LISTENERS */
@@ -240,12 +237,13 @@ types.addEventListener("change", () => {
   // Filter according to checked types
   checkedTypes = [];
   checkboxes.forEach((type) => {
-    if (type.checked) {
-      type.classList.add("checked");
-      checkedTypes.push(type.value);
-    } else type.classList.remove("checked");
+    if (type.checked) checkedTypes.push(type.value);
   });
-  console.log(checkedTypes);
+  if (checkedTypes.length)
+    checkboxes.forEach((type) => {
+      if (!type.checked) type.classList.add("faded");
+    });
+  else checkboxes.forEach((type) => type.classList.remove("faded"));
   renderCards(
     pokeData.filter((pokemon) => {
       return multipleExist(pokemon.types, checkedTypes);

@@ -219,6 +219,10 @@ main {
   filter: drop-shadow(0 0 10px white);
 }
 
+.faded + label img {
+  filter: brightness(70%);
+}
+
 @media screen {
 }
 
