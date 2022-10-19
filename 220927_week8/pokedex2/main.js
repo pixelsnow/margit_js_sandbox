@@ -219,11 +219,13 @@ genButtons.forEach((button, i) => {
 });
 
 search.addEventListener("focus", () => {
-  // Clear gen and type sorting
-  clearGens();
-  clearTypes();
-  // Display all pokemons with no filter
-  renderCards(pokeData);
+  if (!search.value.length) {
+    // Clear gen and type sorting
+    clearGens();
+    clearTypes();
+    // Display all pokemons with no filter
+    renderCards(pokeData);
+  }
 });
 
 search.addEventListener("input", () => {

@@ -24,6 +24,9 @@ body {
   background: linear-gradient(to bottom, #f3bfa9, #9f6ec0, #414485) no-repeat
     fixed;
   color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -233,12 +236,12 @@ footer {
   text-align: center;
   font-size: 0.8rem;
   padding: 0.5rem;
+  margin-top: auto;
 }
 
 #loader {
   font-size: 1rem;
   margin: 1rem;
-  background-color: #f3bfa9;
 }
 
 #loader div {
