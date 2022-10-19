@@ -197,7 +197,10 @@ const clearGens = () => {
 
 const clearTypes = () => {
   checkedTypes.length = 0;
-  checkboxes.forEach((type) => (type.checked = false));
+  checkboxes.forEach((type) => {
+    type.checked = false;
+    type.classList.remove("faded");
+  });
 };
 
 /* EVENT LISTENERS */
@@ -215,10 +218,15 @@ genButtons.forEach((button, i) => {
   });
 });
 
-search.addEventListener("input", () => {
+search.addEventListener("focus", () => {
   // Clear gen and type sorting
   clearGens();
   clearTypes();
+  // Display all pokemons with no filter
+  renderCards(pokeData);
+});
+
+search.addEventListener("input", () => {
   // Filter
   renderCards(
     pokeData.filter((pokemon) => {
