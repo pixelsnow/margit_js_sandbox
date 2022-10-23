@@ -34,6 +34,10 @@ header {
   text-align: center;
 }
 
+a {
+  color: inherit;
+}
+
 h1 {
   margin: 3rem 0;
   font-size: 3.5rem;
@@ -93,6 +97,17 @@ h1 {
 #gens ul li button.picked {
   background: var(--dark-color-alpha-2);
 }
+
+#loader {
+  align-self: center;
+  text-shadow: 1px 1px 1px var(--dark-color-alpha);
+}
+
+#loader div {
+  margin: auto;
+}
+
+/* MAIN */
 
 main {
   display: flex;
@@ -239,15 +254,6 @@ footer {
   margin-top: auto;
 }
 
-#loader {
-  font-size: 1rem;
-  margin: 1rem;
-}
-
-#loader div {
-  margin: auto;
-}
-
 .hidden {
   display: none;
 }
@@ -260,6 +266,14 @@ footer {
 
   .card-container {
     gap: 1rem;
+  }
+  #types {
+    gap: 0.5rem;
+  }
+
+  #types label img {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 }
 
